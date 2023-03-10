@@ -1,6 +1,7 @@
 const express = require("express")
 require("./dbs/conn")
 var cors = require('cors')
+const router = require("./routes/school")
 
 const app = express();
 app.use(cors())
@@ -20,7 +21,6 @@ app.use((req, res, next) => {
   next()
 })
 const port = process.env.PORT || 5555;
-const router = require("./routes/school")
 app.use(express.json());
 app.use(router);
 
